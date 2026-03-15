@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Hamly | سياسة الخصوصية — دورة حياة</title>
+    <style>
+        :root {
+            --brand: #9B7EBD;
+            --brand-dark: #7B5EA0;
+            --brand-light: #E8E0F0;
+            --brand-bg: #F9F7FC;
+            --text: #2D2D3A;
+            --text-secondary: #6B6B80;
+            --border: #E5E5EE;
+            --white: #FFFFFF;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Tajawal', 'Roboto', sans-serif;
+            background: var(--brand-bg);
+            color: var(--text);
+            line-height: 1.75;
+            font-size: 16px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: var(--white);
+            padding: 48px 24px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            opacity: 0.85;
+        }
+
+        .lang-toggle {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        [dir="ltr"] .lang-toggle {
+            left: auto;
+            right: 16px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.35);
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 20px 64px;
+        }
+
+        .updated {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 32px;
+            padding-top: 8px;
+        }
+
+        .section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(155, 126, 189, 0.06);
+        }
+
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--brand-light);
+        }
+
+        .section h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            margin: 20px 0 10px;
+        }
+
+        .section p {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .section ul {
+            padding-inline-start: 22px;
+            margin-bottom: 14px;
+        }
+
+        .section ul li {
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .highlight-box {
+            background: var(--brand-bg);
+            border-inline-start: 4px solid var(--brand);
+            padding: 16px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+            font-size: 15px;
+        }
+
+        [dir="ltr"] .highlight-box {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--brand-light) 0%, #F3EEF8 100%);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .contact-box a {
+            color: var(--brand-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--brand-light);
+            color: var(--brand-dark);
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 2px 4px 2px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 40px 16px 32px; }
+            .header h1 { font-size: 24px; }
+            .container { padding: 16px 14px 48px; }
+            .section { padding: 22px 18px; }
+        }
+
+        /* Hide inactive language */
+        .lang-en { display: none; }
+        .lang-ar { display: block; }
+
+        body.en .lang-en { display: block; }
+        body.en .lang-ar { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <button class="lang-toggle" onclick="toggleLanguage()" id="langBtn">English</button>
+    <div class="lang-ar">
+        <h1>سياسة الخصوصية</h1>
+        <div class="subtitle">تطبيق دورة حياة (Hamly)</div>
+    </div>
+    <div class="lang-en">
+        <h1>Privacy Policy</h1>
+        <div class="subtitle">Hamly App</div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Last Updated -->
+    <div class="updated">
+        <span class="lang-ar">آخر تحديث: مارس 2026</span>
+        <span class="lang-en">Last updated: March 2026</span>
+    </div>
+
+    <!-- 1. Introduction -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>1. مقدمة</h2>
+            <p>مرحبًا بك في <strong>دورة حياة</strong> ("Hamly"، "نحن"، "التطبيق"). نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية. توضح سياسة الخصوصية هذه كيفية جمع بياناتك واستخدامها وتخزينها وحمايتها عند استخدامك لتطبيقنا.</p>
+            <p>تطبيق دورة حياة هو منصة عربية متخصصة في صحة المرأة والحمل، ونتعامل مع بياناتك الصحية بأعلى درجات الحرص والمسؤولية.</p>
+            <div class="highlight-box">باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة. إذا لم تكن موافقًا، يرجى عدم استخدام التطبيق.</div>
+        </div>
+        <div class="lang-en">
+            <h2>1. Introduction</h2>
+            <p>Welcome to <strong>Hamly</strong> ("Dawrat Hayat", "we", "our", "the App"). We are committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your data when you use our application.</p>
+            <p>Hamly is an Arabic-first women's health and pregnancy platform. We treat your health data with the highest level of care and responsibility.</p>
+            <div class="highlight-box">By using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</div>
+        </div>
+    </div>
+
+    <!-- 2. Data We Collect -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>2. البيانات التي نجمعها</h2>
+
+            <h3>2.1 معلومات الحساب</h3>
+            <p>عند إنشاء حسابك، نجمع:</p>
+            <ul>
+                <li>الاسم وعنوان البريد الإلكتروني</li>
+                <li>كلمة المرور (مشفّرة ولا تُخزَّن بصورتها الأصلية)</li>
+                <li>معلومات تسجيل الدخول عبر وسائل التواصل (Google أو Apple أو Facebook) إذا اخترت استخدامها</li>
+            </ul>
+
+            <h3>2.2 بيانات الرحلة الصحية</h3>
+            <p>حسب نوع رحلتك المختارة، قد نجمع:</p>
+            <ul>
+                <li><strong>الحمل:</strong> تاريخ الولادة المتوقع، بيانات الجنين، تتبع الركلات</li>
+                <li><strong>ما بعد الولادة:</strong> معلومات الطفل، سجلات الرضاعة والنوم، جدول التطعيمات</li>
+                <li><strong>تتبع الدورة:</strong> بيانات الدورة الشهرية ومواعيدها</li>
+                <li><strong>عام:</strong> تتبع المزاج، الأعراض، الوزن، ضغط الدم، المواعيد الطبية</li>
+            </ul>
+
+            <h3>2.3 بيانات مُخزّنة على جهازك فقط</h3>
+            <p>تبقى البيانات التالية على جهازك ولا تُرسَل إلى خوادمنا:</p>
+            <ul>
+                <li><strong>الملف الذكي (SmartProfile):</strong> يحلل بياناتك محليًا لتقديم توصيات مخصصة</li>
+                <li><strong>شرائح الإعلانات:</strong> تُحسَب على جهازك فقط (مثل "الثلث الثالث"، "تحضير للولادة") — لا تُرسَل بيانات صحية خام أبدًا</li>
+                <li><strong>المحتوى المؤقت:</strong> محتوى تعليمي محفوظ للاستخدام بدون إنترنت</li>
+                <li><strong>قائمة الانتظار المشفّرة:</strong> بيانات تنتظر المزامنة عند عودة الاتصال (مشفّرة)</li>
+            </ul>
+        </div>
+        <div class="lang-en">
+            <h2>2. Data We Collect</h2>
+
+            <h3>2.1 Account Information</h3>
+            <p>When you create an account, we collect:</p>
+            <ul>
+                <li>Name and email address</li>
+                <li>Password (encrypted; never stored in plain text)</li>
+                <li>Social login information (Google, Apple, or Facebook) if you choose to use them</li>
+            </ul>
+
+            <h3>2.2 Health Journey Data</h3>
+            <p>Depending on your selected journey type, we may collect:</p>
+            <ul>
+                <li><strong>Pregnancy:</strong> Due date, baby information, kick counter data</li>
+                <li><strong>Postpartum:</strong> Baby information, feeding and sleep logs, vaccination schedule</li>
+                <li><strong>Cycle tracking:</strong> Period and cycle data</li>
+                <li><strong>General:</strong> Mood tracking, symptoms, weight, blood pressure, medical appointments</li>
+            </ul>
+
+            <h3>2.3 Data Stored Only on Your Device</h3>
+            <p>The following data remains on your device and is not sent to our servers:</p>
+            <ul>
+                <li><strong>SmartProfile:</strong> Analyzes your data locally to provide personalized recommendations</li>
+                <li><strong>Ad segments:</strong> Computed on-device only (e.g., "3rd_trimester", "birth_prep") — raw health data is never shared</li>
+                <li><strong>Cached content:</strong> Educational content saved for offline use</li>
+                <li><strong>Encrypted offline queue:</strong> Data awaiting sync when connectivity returns (encrypted)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. How We Use Your Data -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>3. كيف نستخدم بياناتك</h2>
+            <p>نستخدم بياناتك للأغراض التالية:</p>
+            <ul>
+                <li><strong>تقديم الخدمة:</strong> تخصيص محتوى صحي وتوصيات بناءً على رحلتك</li>
+                <li><strong>تتبع صحتك:</strong> عرض سجلات المزاج والأعراض والوزن وضغط الدم والمواعيد</li>
+                <li><strong>التنبيهات:</strong> إرسال تذكيرات بالمواعيد والتطعيمات والنصائح المخصصة</li>
+                <li><strong>تحسين التطبيق:</strong> تحليل الأعطال والأخطاء لتحسين الأداء والاستقرار</li>
+                <li><strong>الإعلانات:</strong> عرض إعلانات ذات صلة بناءً على شرائح مجهولة الهوية (بدون مشاركة بيانات صحية)</li>
+            </ul>
+            <div class="highlight-box">لا نبيع بياناتك الشخصية أو الصحية لأي طرف ثالث مطلقًا.</div>
+        </div>
+        <div class="lang-en">
+            <h2>3. How We Use Your Data</h2>
+            <p>We use your data for the following purposes:</p>
+            <ul>
+                <li><strong>Service delivery:</strong> Personalizing health content and recommendations based on your journey</li>
+                <li><strong>Health tracking:</strong> Displaying mood, symptoms, weight, blood pressure, and appointment records</li>
+                <li><strong>Notifications:</strong> Sending reminders for appointments, vaccinations, and personalized tips</li>
+                <li><strong>App improvement:</strong> Analyzing crashes and errors to improve performance and stability</li>
+                <li><strong>Advertising:</strong> Showing relevant ads based on anonymous segments (no health data shared)</li>
+            </ul>
+            <div class="highlight-box">We never sell your personal or health data to any third party.</div>
+        </div>
+    </div>
+
+    <!-- 4. Third-Party Services -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>4. الخدمات الخارجية</h2>
+            <p>يتكامل التطبيق مع الخدمات التالية، ولكل منها سياسة خصوصية خاصة:</p>
+
+            <h3>4.1 المصادقة وتسجيل الدخول</h3>
+            <ul>
+                <li><strong>تسجيل الدخول بحساب Google:</strong> يتلقى التطبيق اسمك وبريدك الإلكتروني فقط</li>
+                <li><strong>تسجيل الدخول بحساب Apple:</strong> يمكنك اختيار إخفاء بريدك الإلكتروني</li>
+                <li><strong>تسجيل الدخول بحساب Facebook:</strong> يتلقى التطبيق اسمك وبريدك الإلكتروني فقط</li>
+            </ul>
+
+            <h3>4.2 تقارير الأعطال</h3>
+            <ul>
+                <li><strong>Sentry:</strong> يجمع بيانات تقنية عن الأعطال (نوع الجهاز، إصدار النظام، مسار الخطأ) — لا يجمع بيانات صحية</li>
+            </ul>
+
+            <h3>4.3 الإشعارات والتحديثات</h3>
+            <ul>
+                <li><strong>Expo / EAS:</strong> يُستخدم لإرسال الإشعارات وتحديثات التطبيق. يتلقى رمز الإشعار الخاص بجهازك</li>
+            </ul>
+
+            <h3>4.4 الإعلانات</h3>
+            <ul>
+                <li>تُحسَب شرائح الإعلانات على جهازك بواسطة محرك SmartProfile</li>
+                <li>تُرسَل فقط شرائح مجهولة الهوية (مثل <span class="badge">الثلث الثالث</span> <span class="badge">تحضير للولادة</span> <span class="badge">دعم الرضاعة</span>)</li>
+                <li>لا تُشارَك أي بيانات صحية خام مع شبكات الإعلانات</li>
+            </ul>
+        </div>
+        <div class="lang-en">
+            <h2>4. Third-Party Services</h2>
+            <p>The App integrates with the following services, each with its own privacy policy:</p>
+
+            <h3>4.1 Authentication</h3>
+            <ul>
+                <li><strong>Google Sign-In:</strong> The App receives only your name and email</li>
+                <li><strong>Apple Sign-In:</strong> You can choose to hide your email address</li>
+                <li><strong>Facebook Login:</strong> The App receives only your name and email</li>
+            </ul>
+
+            <h3>4.2 Crash Reporting</h3>
+            <ul>
+                <li><strong>Sentry:</strong> Collects technical crash data (device type, OS version, error stack trace) — no health data is collected</li>
+            </ul>
+
+            <h3>4.3 Notifications &amp; Updates</h3>
+            <ul>
+                <li><strong>Expo / EAS:</strong> Used for push notifications and over-the-air updates. Receives your device push token</li>
+            </ul>
+
+            <h3>4.4 Advertising</h3>
+            <ul>
+                <li>Ad segments are computed on your device by the SmartProfile engine</li>
+                <li>Only anonymous segments are sent (e.g., <span class="badge">3rd_trimester</span> <span class="badge">birth_prep</span> <span class="badge">nursing_support</span>)</li>
+                <li>No raw health data is ever shared with ad networks</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. Data Security -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>5. أمان البيانات</h2>
+            <p>نتخذ إجراءات أمان صارمة لحماية بياناتك الصحية الحساسة:</p>
+            <ul>
+                <li><strong>التشفير أثناء النقل:</strong> جميع البيانات تُنقل عبر بروتوكول HTTPS المشفّر</li>
+                <li><strong>تشفير كلمات المرور:</strong> تُشفَّر كلمات المرور باستخدام خوارزمية تجزئة قوية قبل التخزين</li>
+                <li><strong>تخزين آمن على الجهاز:</strong> تُستخدم تقنية Expo SecureStore لتخزين الرموز المميزة (tokens) بأمان</li>
+                <li><strong>قائمة انتظار مشفّرة:</strong> البيانات المحفوظة محليًا للمزامنة مشفّرة</li>
+                <li><strong>الحذف الناعم:</strong> البيانات المحذوفة تُعلَّم كمحذوفة ولا تظهر، مع إمكانية الحذف النهائي عند الطلب</li>
+            </ul>
+            <div class="highlight-box">بياناتك الصحية حساسة بطبيعتها. نعاملها وفقًا لمعايير حماية البيانات الصحية ونلتزم بمبدأ الحد الأدنى من البيانات — لا نجمع إلا ما نحتاجه لتقديم الخدمة.</div>
+        </div>
+        <div class="lang-en">
+            <h2>5. Data Security</h2>
+            <p>We implement strict security measures to protect your sensitive health data:</p>
+            <ul>
+                <li><strong>Encryption in transit:</strong> All data is transmitted over encrypted HTTPS</li>
+                <li><strong>Password hashing:</strong> Passwords are hashed using strong algorithms before storage</li>
+                <li><strong>Secure device storage:</strong> Expo SecureStore is used to securely store authentication tokens</li>
+                <li><strong>Encrypted offline queue:</strong> Locally cached data awaiting sync is encrypted</li>
+                <li><strong>Soft deletion:</strong> Deleted data is marked as deleted and hidden, with permanent deletion available on request</li>
+            </ul>
+            <div class="highlight-box">Your health data is inherently sensitive. We treat it according to health data protection standards and follow the principle of data minimization — we only collect what we need to provide the service.</div>
+        </div>
+    </div>
+
+    <!-- 6. Your Rights -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>6. حقوقك</h2>
+            <p>وفقًا للائحة العامة لحماية البيانات (GDPR) والقوانين المعمول بها، لديك الحقوق التالية:</p>
+            <ul>
+                <li><strong>حق الوصول:</strong> يمكنك طلب نسخة من جميع بياناتك الشخصية المخزنة لدينا</li>
+                <li><strong>حق التصحيح:</strong> يمكنك تحديث أو تصحيح بياناتك في أي وقت من خلال إعدادات الحساب</li>
+                <li><strong>حق الحذف:</strong> يمكنك طلب حذف حسابك وجميع بياناتك نهائيًا</li>
+                <li><strong>حق نقل البيانات:</strong> يمكنك طلب تصدير بياناتك بصيغة قابلة للقراءة</li>
+                <li><strong>حق الاعتراض:</strong> يمكنك الاعتراض على معالجة بياناتك لأغراض التسويق</li>
+                <li><strong>حق سحب الموافقة:</strong> يمكنك سحب موافقتك في أي وقت</li>
+            </ul>
+            <div class="highlight-box">لممارسة أي من هذه الحقوق، تواصل معنا عبر البريد الإلكتروني: <strong>support@hamly.app</strong>. سنستجيب خلال 30 يومًا كحد أقصى.</div>
+        </div>
+        <div class="lang-en">
+            <h2>6. Your Rights</h2>
+            <p>Under the General Data Protection Regulation (GDPR) and applicable laws, you have the following rights:</p>
+            <ul>
+                <li><strong>Right of access:</strong> You can request a copy of all personal data we store about you</li>
+                <li><strong>Right to rectification:</strong> You can update or correct your data at any time through account settings</li>
+                <li><strong>Right to erasure:</strong> You can request permanent deletion of your account and all associated data</li>
+                <li><strong>Right to data portability:</strong> You can request an export of your data in a machine-readable format</li>
+                <li><strong>Right to object:</strong> You can object to processing of your data for marketing purposes</li>
+                <li><strong>Right to withdraw consent:</strong> You can withdraw your consent at any time</li>
+            </ul>
+            <div class="highlight-box">To exercise any of these rights, contact us at: <strong>support@hamly.app</strong>. We will respond within 30 days.</div>
+        </div>
+    </div>
+
+    <!-- 7. Data Retention -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>7. الاحتفاظ بالبيانات</h2>
+            <p>نحتفظ ببياناتك طالما حسابك نشط. عند طلب حذف الحساب:</p>
+            <ul>
+                <li>تُحذف بيانات الحساب والملف الشخصي خلال 30 يومًا</li>
+                <li>تُحذف السجلات الصحية (المزاج، الأعراض، الوزن، إلخ) نهائيًا</li>
+                <li>قد تُحتفظ ببيانات مجهولة الهوية لأغراض إحصائية</li>
+                <li>البيانات المطلوبة قانونيًا تُحفظ وفق المدة القانونية</li>
+            </ul>
+        </div>
+        <div class="lang-en">
+            <h2>7. Data Retention</h2>
+            <p>We retain your data as long as your account is active. Upon account deletion request:</p>
+            <ul>
+                <li>Account and profile data are deleted within 30 days</li>
+                <li>Health records (mood, symptoms, weight, etc.) are permanently deleted</li>
+                <li>Anonymized data may be retained for statistical purposes</li>
+                <li>Legally required data is retained for the duration required by law</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 8. Children's Privacy -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>8. خصوصية الأطفال</h2>
+            <p>تطبيق دورة حياة مخصص للبالغين. <strong>الحد الأدنى للعمر المسموح باستخدام التطبيق هو 16 عامًا.</strong></p>
+            <p>لا نجمع بيانات من أشخاص دون 16 عامًا عن قصد. إذا علمنا أن مستخدمًا دون هذا السن قد أنشأ حسابًا، سنحذف بياناته فورًا.</p>
+            <p>إذا كنت ولي أمر وعلمت أن طفلك استخدم التطبيق، يرجى التواصل معنا على <strong>support@hamly.app</strong>.</p>
+        </div>
+        <div class="lang-en">
+            <h2>8. Children's Privacy</h2>
+            <p>Hamly is intended for adults. <strong>The minimum age to use the App is 16 years old.</strong></p>
+            <p>We do not knowingly collect data from individuals under 16. If we learn that a user under this age has created an account, we will delete their data immediately.</p>
+            <p>If you are a parent and learn that your child has used the App, please contact us at <strong>support@hamly.app</strong>.</p>
+        </div>
+    </div>
+
+    <!-- 9. Changes to This Policy -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>9. تغييرات على هذه السياسة</h2>
+            <p>قد نحدّث سياسة الخصوصية هذه من وقت لآخر. سنُعلمك بأي تغييرات جوهرية عبر:</p>
+            <ul>
+                <li>إشعار داخل التطبيق</li>
+                <li>تحديث تاريخ "آخر تحديث" في أعلى هذه الصفحة</li>
+            </ul>
+            <p>نوصي بمراجعة هذه السياسة بشكل دوري للاطلاع على أي تحديثات.</p>
+        </div>
+        <div class="lang-en">
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of material changes through:</p>
+            <ul>
+                <li>An in-app notification</li>
+                <li>Updating the "Last updated" date at the top of this page</li>
+            </ul>
+            <p>We recommend reviewing this policy periodically for any updates.</p>
+        </div>
+    </div>
+
+    <!-- 10. Contact -->
+    <div class="section">
+        <div class="lang-ar">
+            <h2>10. تواصل معنا</h2>
+        </div>
+        <div class="lang-en">
+            <h2>10. Contact Us</h2>
+        </div>
+        <div class="contact-box">
+            <div class="lang-ar">
+                <p>إذا كانت لديك أسئلة حول سياسة الخصوصية أو كيفية تعاملنا مع بياناتك، لا تترددي في التواصل معنا:</p>
+                <p style="margin-top: 16px; font-size: 18px;">
+                    <strong>Hamly (دورة حياة)</strong><br>
+                    البريد الإلكتروني: <a href="mailto:support@hamly.app">support@hamly.app</a>
+                </p>
+            </div>
+            <div class="lang-en">
+                <p>If you have questions about this Privacy Policy or how we handle your data, do not hesitate to reach out:</p>
+                <p style="margin-top: 16px; font-size: 18px;">
+                    <strong>Hamly</strong><br>
+                    Email: <a href="mailto:support@hamly.app">support@hamly.app</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <span class="lang-ar">&copy; 2026 Hamly (دورة حياة). جميع الحقوق محفوظة.</span>
+    <span class="lang-en">&copy; 2026 Hamly. All rights reserved.</span>
+</div>
+
+<script>
+    let isArabic = true;
+
+    function toggleLanguage() {
+        isArabic = !isArabic;
+        const html = document.documentElement;
+        const btn = document.getElementById('langBtn');
+
+        if (isArabic) {
+            html.setAttribute('lang', 'ar');
+            html.setAttribute('dir', 'rtl');
+            document.body.classList.remove('en');
+            btn.textContent = 'English';
+        } else {
+            html.setAttribute('lang', 'en');
+            html.setAttribute('dir', 'ltr');
+            document.body.classList.add('en');
+            btn.textContent = 'العربية';
+        }
+    }
+</script>
+
+</body>
+</html>
