@@ -3,557 +3,1096 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7B5EA0">
+    <meta name="description" content="Privacy Policy for Life Cycle (Dawrat Hayat) — Arabic-first women's health and pregnancy app. Learn how we collect, store, and delete your data.">
     <title>Privacy Policy — Life Cycle | سياسة الخصوصية — دورة حياة</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%9C%3C/text%3E%3C/svg%3E">
     <style>
         :root {
             --brand: #9B7EBD;
             --brand-dark: #7B5EA0;
-            --brand-light: #E8E0F0;
-            --brand-bg: #F9F7FC;
-            --text: #2D2D3A;
-            --text-secondary: #6B6B80;
-            --border: #E5E5EE;
-            --white: #FFFFFF;
-            --radius: 12px;
+            --brand-soft: #F1ECF7;
+            --brand-tint: #FAF7FD;
+            --ink: #1A1A2E;
+            --ink-2: #454560;
+            --ink-3: #7A7A95;
+            --line: #E8E5EF;
+            --line-2: #F0EDF5;
+            --bg: #FBFAFD;
+            --card: #FFFFFF;
+            --success: #2A9D6F;
+            --warning: #C28210;
+            --danger: #C24A4A;
+            --radius-sm: 8px;
+            --radius: 14px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 1px 2px rgba(123, 94, 160, 0.06), 0 1px 1px rgba(26, 26, 46, 0.04);
+            --shadow: 0 4px 16px rgba(123, 94, 160, 0.08), 0 1px 3px rgba(26, 26, 46, 0.05);
+            --shadow-lg: 0 12px 40px rgba(123, 94, 160, 0.12), 0 4px 12px rgba(26, 26, 46, 0.06);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Tajawal', 'Roboto', sans-serif;
-            background: var(--brand-bg);
-            color: var(--text);
-            line-height: 1.75;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Tajawal", "Cairo", "Inter", "Roboto", sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.7;
             font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .header {
+        body.en {
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", sans-serif;
+        }
+
+        /* Language visibility */
+        .lang-en { display: none; }
+        body.en .lang-ar { display: none; }
+        body.en .lang-en { display: block; }
+        body.en .lang-en-inline { display: inline; }
+        body.en .lang-ar-inline { display: none; }
+        .lang-en-inline { display: none; }
+        .lang-ar-inline { display: inline; }
+
+        /* Sticky top bar */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(14px);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .brand-mark {
+            width: 32px; height: 32px;
+            border-radius: 10px;
             background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
-            color: var(--white);
-            padding: 48px 24px 40px;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-toggle {
+            display: inline-flex;
+            background: var(--brand-soft);
+            border-radius: 999px;
+            padding: 4px;
+            gap: 2px;
+        }
+
+        .lang-toggle button {
+            border: 0;
+            background: transparent;
+            padding: 7px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-2);
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+
+        .lang-toggle button.active {
+            background: white;
+            color: var(--brand-dark);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            padding: 64px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.10), transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 760px;
+            margin: 0 auto;
             text-align: center;
             position: relative;
         }
 
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .header .subtitle {
-            font-size: 15px;
-            opacity: 0.85;
-        }
-
-        .lang-toggle {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: var(--white);
-            padding: 8px 18px;
-            border-radius: 24px;
-            cursor: pointer;
-            font-size: 14px;
+        .hero .eyebrow {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+            font-size: 13px;
             font-weight: 600;
-            transition: background 0.2s;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
-        [dir="ltr"] .lang-toggle {
-            left: auto;
-            right: 16px;
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 12px;
         }
 
-        .lang-toggle:hover {
-            background: rgba(255,255,255,0.35);
+        .hero p {
+            font-size: 17px;
+            opacity: 0.92;
+            max-width: 580px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 24px 20px 64px;
+        .updated-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
         }
 
-        .updated {
-            text-align: center;
-            color: var(--text-secondary);
+        .updated-pill::before {
+            content: '';
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #6FD49A;
+            box-shadow: 0 0 0 3px rgba(111, 212, 154, 0.25);
+        }
+
+        /* Page layout */
+        .page {
+            max-width: 1200px;
+            margin: -40px auto 0;
+            padding: 0 24px 80px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 48px;
+            position: relative;
+        }
+
+        body.en .page { direction: ltr; }
+
+        @media (max-width: 900px) {
+            .page { grid-template-columns: 1fr; gap: 24px; }
+            .toc { display: none; }
+        }
+
+        /* TOC */
+        .toc {
+            position: sticky;
+            top: 88px;
+            align-self: start;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .toc h4 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 14px;
+        }
+
+        .toc ol { list-style: none; counter-reset: toc; }
+
+        .toc li {
+            counter-increment: toc;
+            margin: 2px 0;
+        }
+
+        .toc a {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 8px 10px;
+            color: var(--ink-2);
+            text-decoration: none;
             font-size: 14px;
-            margin-bottom: 32px;
-            padding-top: 8px;
+            border-radius: var(--radius-sm);
+            transition: all 0.15s ease;
+            line-height: 1.4;
         }
+
+        .toc a::before {
+            content: counter(toc, decimal-leading-zero);
+            color: var(--ink-3);
+            font-weight: 600;
+            font-size: 11px;
+            font-feature-settings: "tnum";
+            flex-shrink: 0;
+        }
+
+        .toc a:hover {
+            background: var(--brand-soft);
+            color: var(--brand-dark);
+        }
+
+        /* Content */
+        .content { min-width: 0; }
 
         .section {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 28px 24px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 32px 36px;
             margin-bottom: 20px;
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 3px rgba(155, 126, 189, 0.06);
+            box-shadow: var(--shadow-sm);
+            scroll-margin-top: 80px;
+        }
+
+        @media (max-width: 600px) {
+            .section { padding: 24px 22px; border-radius: var(--radius); }
+            .hero { padding: 48px 20px 64px; }
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 15px; }
+        }
+
+        .section.highlight {
+            background: linear-gradient(180deg, #FFF9F0 0%, var(--card) 60%);
+            border-color: #F0D8A8;
+        }
+
+        .section.danger {
+            background: linear-gradient(180deg, #FDF5F5 0%, var(--card) 60%);
+            border-color: #F2C8C8;
+        }
+
+        .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            padding: 0 8px;
+            background: var(--brand-soft);
+            color: var(--brand-dark);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-inline-end: 10px;
+            font-feature-settings: "tnum";
         }
 
         .section h2 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 700;
-            color: var(--brand-dark);
+            color: var(--ink);
+            letter-spacing: -0.01em;
             margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--brand-light);
+            display: flex;
+            align-items: center;
+            line-height: 1.3;
         }
 
         .section h3 {
             font-size: 17px;
             font-weight: 600;
-            color: var(--text);
-            margin: 20px 0 10px;
+            color: var(--ink);
+            margin-top: 22px;
+            margin-bottom: 10px;
         }
 
-        .section p {
-            margin-bottom: 12px;
-            color: var(--text);
-        }
+        .section p { color: var(--ink-2); margin-bottom: 12px; }
 
-        .section ul {
-            padding-inline-start: 22px;
-            margin-bottom: 14px;
-        }
+        .section ul, .section ol { margin: 10px 0 16px; padding-inline-start: 22px; color: var(--ink-2); }
+        .section li { margin: 6px 0; }
+        .section li strong { color: var(--ink); }
 
-        .section ul li {
-            margin-bottom: 6px;
-            color: var(--text);
+        .section a {
+            color: var(--brand-dark);
+            text-decoration: underline;
+            text-decoration-color: rgba(123, 94, 160, 0.3);
+            text-underline-offset: 3px;
         }
+        .section a:hover { text-decoration-color: var(--brand-dark); }
 
-        .highlight-box {
-            background: var(--brand-bg);
-            border-inline-start: 4px solid var(--brand);
+        /* Callout boxes */
+        .callout {
+            display: flex;
+            gap: 14px;
             padding: 16px 18px;
-            border-radius: 0 8px 8px 0;
+            background: var(--brand-tint);
+            border-inline-start: 4px solid var(--brand);
+            border-radius: var(--radius-sm);
             margin: 16px 0;
+            color: var(--ink);
             font-size: 15px;
         }
 
-        [dir="ltr"] .highlight-box {
-            border-radius: 8px 0 0 8px;
+        .callout.warn {
+            background: #FFF8EC;
+            border-inline-start-color: var(--warning);
         }
 
-        .contact-box {
-            background: linear-gradient(135deg, var(--brand-light) 0%, #F3EEF8 100%);
-            border-radius: var(--radius);
-            padding: 28px 24px;
-            text-align: center;
-            margin-top: 8px;
+        .callout.danger {
+            background: #FDF2F2;
+            border-inline-start-color: var(--danger);
         }
 
-        .contact-box a {
-            color: var(--brand-dark);
+        .callout.success {
+            background: #F1FAF5;
+            border-inline-start-color: var(--success);
+        }
+
+        .callout-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            line-height: 1.2;
+        }
+
+        /* Retention table */
+        .retention-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 16px 0 8px;
+            font-size: 14.5px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .retention-table th {
+            background: var(--brand-tint);
+            color: var(--ink);
             font-weight: 600;
-            text-decoration: none;
+            text-align: start;
+            padding: 12px 14px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            border-bottom: 1px solid var(--line);
         }
 
-        .contact-box a:hover {
-            text-decoration: underline;
+        .retention-table td {
+            padding: 12px 14px;
+            border-top: 1px solid var(--line-2);
+            color: var(--ink-2);
+            vertical-align: top;
         }
 
+        .retention-table tr:first-child td { border-top: 0; }
+        .retention-table td:first-child { color: var(--ink); font-weight: 600; }
+
+        /* Deletion steps */
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0 !important;
+            margin: 18px 0 !important;
+            display: grid;
+            gap: 12px;
+        }
+
+        .steps li {
+            counter-increment: step;
+            display: flex;
+            gap: 14px;
+            padding: 16px 18px;
+            background: var(--brand-tint);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            position: relative;
+        }
+
+        .steps li::before {
+            content: counter(step);
+            flex-shrink: 0;
+            width: 28px; height: 28px;
+            background: var(--brand);
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 13px;
+            font-weight: 700;
+            font-feature-settings: "tnum";
+        }
+
+        .step-content { flex: 1; }
+        .step-content strong { display: block; color: var(--ink); margin-bottom: 2px; font-size: 15px; }
+        .step-content small { color: var(--ink-3); font-size: 13px; }
+
+        /* Badges */
         .badge {
             display: inline-block;
-            background: var(--brand-light);
+            padding: 3px 10px;
+            background: var(--brand-soft);
             color: var(--brand-dark);
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 13px;
+            border-radius: 999px;
+            font-size: 12.5px;
             font-weight: 600;
-            margin: 2px 4px 2px 0;
+            margin: 2px 3px;
+            font-feature-settings: "tnum";
         }
 
+        .badge.green { background: #E0F5EB; color: var(--success); }
+        .badge.amber { background: #FFF3DD; color: var(--warning); }
+
+        /* Contact card */
+        .contact-card {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card h3 {
+            color: white !important;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p { color: rgba(255, 255, 255, 0.92) !important; margin-bottom: 18px; }
+
+        .contact-card a.email-cta {
+            display: inline-block;
+            background: white;
+            color: var(--brand-dark);
+            padding: 12px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .contact-card a.email-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+        /* Footer */
         .footer {
             text-align: center;
-            padding: 24px;
-            color: var(--text-secondary);
+            color: var(--ink-3);
+            font-size: 13px;
+            padding: 40px 24px 24px;
+            border-top: 1px solid var(--line);
+            margin-top: 40px;
+            background: var(--card);
+        }
+
+        .footer-links { margin-top: 8px; }
+        .footer-links a {
+            color: var(--ink-2);
+            text-decoration: none;
+            margin: 0 10px;
             font-size: 13px;
         }
+        .footer-links a:hover { color: var(--brand-dark); }
 
-        @media (max-width: 480px) {
-            .header { padding: 40px 16px 32px; }
-            .header h1 { font-size: 24px; }
-            .container { padding: 16px 14px 48px; }
-            .section { padding: 22px 18px; }
-        }
-
-        /* Hide inactive language */
-        .lang-en { display: none; }
-        .lang-ar { display: block; }
-
-        body.en .lang-en { display: block; }
-        body.en .lang-ar { display: none; }
+        /* Selection */
+        ::selection { background: var(--brand-soft); color: var(--brand-dark); }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <button class="lang-toggle" onclick="toggleLanguage()" id="langBtn">English</button>
-    <div class="lang-ar">
-        <h1>سياسة الخصوصية</h1>
-        <div class="subtitle">تطبيق دورة حياة</div>
-    </div>
-    <div class="lang-en">
-        <h1>Privacy Policy</h1>
-        <div class="subtitle">Life Cycle App</div>
-    </div>
-</div>
-
-<div class="container">
-
-    <!-- Last Updated -->
-    <div class="updated">
-        <span class="lang-ar">آخر تحديث: مارس 2026</span>
-        <span class="lang-en">Last updated: March 2026</span>
-    </div>
-
-    <!-- 1. Introduction -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>1. مقدمة</h2>
-            <p>مرحبًا بك في <strong>دورة حياة</strong> ("Life Cycle"، "نحن"، "التطبيق"). نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية. توضح سياسة الخصوصية هذه كيفية جمع بياناتك واستخدامها وتخزينها وحمايتها عند استخدامك لتطبيقنا.</p>
-            <p>تطبيق دورة حياة هو منصة عربية متخصصة في صحة المرأة والحمل، ونتعامل مع بياناتك الصحية بأعلى درجات الحرص والمسؤولية.</p>
-            <div class="highlight-box">باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة. إذا لم تكن موافقًا، يرجى عدم استخدام التطبيق.</div>
+<!-- Top bar -->
+<header class="topbar">
+    <div class="topbar-inner">
+        <div class="brand">
+            <div class="brand-mark">💜</div>
+            <div>
+                <span class="lang-ar">دورة حياة</span>
+                <span class="lang-en">Life Cycle</span>
+            </div>
         </div>
-        <div class="lang-en">
-            <h2>1. Introduction</h2>
-            <p>Welcome to <strong>Life Cycle</strong> ("دورة حياة", "we", "our", "the App"). We are committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your data when you use our application.</p>
-            <p>Life Cycle is an Arabic-first women's health and pregnancy platform. We treat your health data with the highest level of care and responsibility.</p>
-            <div class="highlight-box">By using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</div>
+        <div class="lang-toggle" role="tablist" aria-label="Language">
+            <button id="langAr" class="active" onclick="setLanguage('ar')" role="tab">العربية</button>
+            <button id="langEn" onclick="setLanguage('en')" role="tab">English</button>
         </div>
     </div>
+</header>
 
-    <!-- 2. Data We Collect -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>2. البيانات التي نجمعها</h2>
-
-            <h3>2.1 معلومات الحساب</h3>
-            <p>عند إنشاء حسابك، نجمع:</p>
-            <ul>
-                <li>الاسم وعنوان البريد الإلكتروني</li>
-                <li>كلمة المرور (مشفّرة ولا تُخزَّن بصورتها الأصلية)</li>
-                <li>معلومات تسجيل الدخول عبر وسائل التواصل (Google أو Apple أو Facebook) إذا اخترت استخدامها</li>
-            </ul>
-
-            <h3>2.2 بيانات الرحلة الصحية</h3>
-            <p>حسب نوع رحلتك المختارة، قد نجمع:</p>
-            <ul>
-                <li><strong>الحمل:</strong> تاريخ الولادة المتوقع، بيانات الجنين، تتبع الركلات</li>
-                <li><strong>ما بعد الولادة:</strong> معلومات الطفل، سجلات الرضاعة والنوم، جدول التطعيمات</li>
-                <li><strong>تتبع الدورة:</strong> بيانات الدورة الشهرية ومواعيدها</li>
-                <li><strong>عام:</strong> تتبع المزاج، الأعراض، الوزن، ضغط الدم، المواعيد الطبية</li>
-            </ul>
-
-            <h3>2.3 بيانات مُخزّنة على جهازك فقط</h3>
-            <p>تبقى البيانات التالية على جهازك ولا تُرسَل إلى خوادمنا:</p>
-            <ul>
-                <li><strong>الملف الذكي (SmartProfile):</strong> يحلل بياناتك محليًا لتقديم توصيات مخصصة</li>
-                <li><strong>شرائح الإعلانات:</strong> تُحسَب على جهازك فقط (مثل "الثلث الثالث"، "تحضير للولادة") — لا تُرسَل بيانات صحية خام أبدًا</li>
-                <li><strong>المحتوى المؤقت:</strong> محتوى تعليمي محفوظ للاستخدام بدون إنترنت</li>
-                <li><strong>قائمة الانتظار المشفّرة:</strong> بيانات تنتظر المزامنة عند عودة الاتصال (مشفّرة)</li>
-            </ul>
-        </div>
-        <div class="lang-en">
-            <h2>2. Data We Collect</h2>
-
-            <h3>2.1 Account Information</h3>
-            <p>When you create an account, we collect:</p>
-            <ul>
-                <li>Name and email address</li>
-                <li>Password (encrypted; never stored in plain text)</li>
-                <li>Social login information (Google, Apple, or Facebook) if you choose to use them</li>
-            </ul>
-
-            <h3>2.2 Health Journey Data</h3>
-            <p>Depending on your selected journey type, we may collect:</p>
-            <ul>
-                <li><strong>Pregnancy:</strong> Due date, baby information, kick counter data</li>
-                <li><strong>Postpartum:</strong> Baby information, feeding and sleep logs, vaccination schedule</li>
-                <li><strong>Cycle tracking:</strong> Period and cycle data</li>
-                <li><strong>General:</strong> Mood tracking, symptoms, weight, blood pressure, medical appointments</li>
-            </ul>
-
-            <h3>2.3 Data Stored Only on Your Device</h3>
-            <p>The following data remains on your device and is not sent to our servers:</p>
-            <ul>
-                <li><strong>SmartProfile:</strong> Analyzes your data locally to provide personalized recommendations</li>
-                <li><strong>Ad segments:</strong> Computed on-device only (e.g., "3rd_trimester", "birth_prep") — raw health data is never shared</li>
-                <li><strong>Cached content:</strong> Educational content saved for offline use</li>
-                <li><strong>Encrypted offline queue:</strong> Data awaiting sync when connectivity returns (encrypted)</li>
-            </ul>
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <span class="eyebrow">
+            <span class="lang-ar">الخصوصية والبيانات</span>
+            <span class="lang-en">Privacy &amp; Data</span>
+        </span>
+        <h1>
+            <span class="lang-ar">سياسة الخصوصية</span>
+            <span class="lang-en">Privacy Policy</span>
+        </h1>
+        <p>
+            <span class="lang-ar">كيف نجمع بياناتك، ولمدة كم نحتفظ بها، وكيف يمكنك حذفها — بكل وضوح وشفافية.</span>
+            <span class="lang-en">How we collect your data, how long we keep it, and how you can delete it — clearly and transparently.</span>
+        </p>
+        <div class="updated-pill">
+            <span class="lang-ar">آخر تحديث: 12 مايو 2026</span>
+            <span class="lang-en">Last updated: May 12, 2026</span>
         </div>
     </div>
+</section>
 
-    <!-- 3. How We Use Your Data -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>3. كيف نستخدم بياناتك</h2>
-            <p>نستخدم بياناتك للأغراض التالية:</p>
-            <ul>
-                <li><strong>تقديم الخدمة:</strong> تخصيص محتوى صحي وتوصيات بناءً على رحلتك</li>
-                <li><strong>تتبع صحتك:</strong> عرض سجلات المزاج والأعراض والوزن وضغط الدم والمواعيد</li>
-                <li><strong>التنبيهات:</strong> إرسال تذكيرات بالمواعيد والتطعيمات والنصائح المخصصة</li>
-                <li><strong>تحسين التطبيق:</strong> تحليل الأعطال والأخطاء لتحسين الأداء والاستقرار</li>
-                <li><strong>الإعلانات:</strong> عرض إعلانات ذات صلة بناءً على شرائح مجهولة الهوية (بدون مشاركة بيانات صحية)</li>
-            </ul>
-            <div class="highlight-box">لا نبيع بياناتك الشخصية أو الصحية لأي طرف ثالث مطلقًا.</div>
-        </div>
-        <div class="lang-en">
-            <h2>3. How We Use Your Data</h2>
-            <p>We use your data for the following purposes:</p>
-            <ul>
-                <li><strong>Service delivery:</strong> Personalizing health content and recommendations based on your journey</li>
-                <li><strong>Health tracking:</strong> Displaying mood, symptoms, weight, blood pressure, and appointment records</li>
-                <li><strong>Notifications:</strong> Sending reminders for appointments, vaccinations, and personalized tips</li>
-                <li><strong>App improvement:</strong> Analyzing crashes and errors to improve performance and stability</li>
-                <li><strong>Advertising:</strong> Showing relevant ads based on anonymous segments (no health data shared)</li>
-            </ul>
-            <div class="highlight-box">We never sell your personal or health data to any third party.</div>
-        </div>
-    </div>
+<!-- Page body -->
+<div class="page">
 
-    <!-- 4. Third-Party Services -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>4. الخدمات الخارجية</h2>
-            <p>يتكامل التطبيق مع الخدمات التالية، ولكل منها سياسة خصوصية خاصة:</p>
+    <!-- TOC -->
+    <aside class="toc" aria-label="Table of contents">
+        <h4>
+            <span class="lang-ar">المحتويات</span>
+            <span class="lang-en">Contents</span>
+        </h4>
+        <ol>
+            <li><a href="#introduction"><span class="lang-ar">مقدمة</span><span class="lang-en">Introduction</span></a></li>
+            <li><a href="#data-we-collect"><span class="lang-ar">البيانات التي نجمعها</span><span class="lang-en">Data we collect</span></a></li>
+            <li><a href="#how-we-use"><span class="lang-ar">كيف نستخدم البيانات</span><span class="lang-en">How we use data</span></a></li>
+            <li><a href="#third-parties"><span class="lang-ar">الخدمات الخارجية</span><span class="lang-en">Third parties</span></a></li>
+            <li><a href="#security"><span class="lang-ar">الأمان</span><span class="lang-en">Security</span></a></li>
+            <li><a href="#data-storage"><span class="lang-ar">تخزين البيانات</span><span class="lang-en">Data storage</span></a></li>
+            <li><a href="#delete-account"><span class="lang-ar">حذف بياناتك</span><span class="lang-en">Delete your data</span></a></li>
+            <li><a href="#your-rights"><span class="lang-ar">حقوقك</span><span class="lang-en">Your rights</span></a></li>
+            <li><a href="#children"><span class="lang-ar">خصوصية الأطفال</span><span class="lang-en">Children</span></a></li>
+            <li><a href="#changes"><span class="lang-ar">التغييرات</span><span class="lang-en">Changes</span></a></li>
+            <li><a href="#contact"><span class="lang-ar">تواصل معنا</span><span class="lang-en">Contact</span></a></li>
+        </ol>
+    </aside>
 
-            <h3>4.1 المصادقة وتسجيل الدخول</h3>
-            <ul>
-                <li><strong>تسجيل الدخول بحساب Google:</strong> يتلقى التطبيق اسمك وبريدك الإلكتروني فقط</li>
-                <li><strong>تسجيل الدخول بحساب Apple:</strong> يمكنك اختيار إخفاء بريدك الإلكتروني</li>
-                <li><strong>تسجيل الدخول بحساب Facebook:</strong> يتلقى التطبيق اسمك وبريدك الإلكتروني فقط</li>
-            </ul>
+    <main class="content">
 
-            <h3>4.2 تقارير الأعطال</h3>
-            <ul>
-                <li><strong>Sentry:</strong> يجمع بيانات تقنية عن الأعطال (نوع الجهاز، إصدار النظام، مسار الخطأ) — لا يجمع بيانات صحية</li>
-            </ul>
-
-            <h3>4.3 الإشعارات والتحديثات</h3>
-            <ul>
-                <li><strong>Expo / EAS:</strong> يُستخدم لإرسال الإشعارات وتحديثات التطبيق. يتلقى رمز الإشعار الخاص بجهازك</li>
-            </ul>
-
-            <h3>4.4 الإعلانات</h3>
-            <ul>
-                <li>تُحسَب شرائح الإعلانات على جهازك بواسطة محرك SmartProfile</li>
-                <li>تُرسَل فقط شرائح مجهولة الهوية (مثل <span class="badge">الثلث الثالث</span> <span class="badge">تحضير للولادة</span> <span class="badge">دعم الرضاعة</span>)</li>
-                <li>لا تُشارَك أي بيانات صحية خام مع شبكات الإعلانات</li>
-            </ul>
-        </div>
-        <div class="lang-en">
-            <h2>4. Third-Party Services</h2>
-            <p>The App integrates with the following services, each with its own privacy policy:</p>
-
-            <h3>4.1 Authentication</h3>
-            <ul>
-                <li><strong>Google Sign-In:</strong> The App receives only your name and email</li>
-                <li><strong>Apple Sign-In:</strong> You can choose to hide your email address</li>
-                <li><strong>Facebook Login:</strong> The App receives only your name and email</li>
-            </ul>
-
-            <h3>4.2 Crash Reporting</h3>
-            <ul>
-                <li><strong>Sentry:</strong> Collects technical crash data (device type, OS version, error stack trace) — no health data is collected</li>
-            </ul>
-
-            <h3>4.3 Notifications &amp; Updates</h3>
-            <ul>
-                <li><strong>Expo / EAS:</strong> Used for push notifications and over-the-air updates. Receives your device push token</li>
-            </ul>
-
-            <h3>4.4 Advertising</h3>
-            <ul>
-                <li>Ad segments are computed on your device by the SmartProfile engine</li>
-                <li>Only anonymous segments are sent (e.g., <span class="badge">3rd_trimester</span> <span class="badge">birth_prep</span> <span class="badge">nursing_support</span>)</li>
-                <li>No raw health data is ever shared with ad networks</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 5. Data Security -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>5. أمان البيانات</h2>
-            <p>نتخذ إجراءات أمان صارمة لحماية بياناتك الصحية الحساسة:</p>
-            <ul>
-                <li><strong>التشفير أثناء النقل:</strong> جميع البيانات تُنقل عبر بروتوكول HTTPS المشفّر</li>
-                <li><strong>تشفير كلمات المرور:</strong> تُشفَّر كلمات المرور باستخدام خوارزمية تجزئة قوية قبل التخزين</li>
-                <li><strong>تخزين آمن على الجهاز:</strong> تُستخدم تقنية Expo SecureStore لتخزين الرموز المميزة (tokens) بأمان</li>
-                <li><strong>قائمة انتظار مشفّرة:</strong> البيانات المحفوظة محليًا للمزامنة مشفّرة</li>
-                <li><strong>الحذف الناعم:</strong> البيانات المحذوفة تُعلَّم كمحذوفة ولا تظهر، مع إمكانية الحذف النهائي عند الطلب</li>
-            </ul>
-            <div class="highlight-box">بياناتك الصحية حساسة بطبيعتها. نعاملها وفقًا لمعايير حماية البيانات الصحية ونلتزم بمبدأ الحد الأدنى من البيانات — لا نجمع إلا ما نحتاجه لتقديم الخدمة.</div>
-        </div>
-        <div class="lang-en">
-            <h2>5. Data Security</h2>
-            <p>We implement strict security measures to protect your sensitive health data:</p>
-            <ul>
-                <li><strong>Encryption in transit:</strong> All data is transmitted over encrypted HTTPS</li>
-                <li><strong>Password hashing:</strong> Passwords are hashed using strong algorithms before storage</li>
-                <li><strong>Secure device storage:</strong> Expo SecureStore is used to securely store authentication tokens</li>
-                <li><strong>Encrypted offline queue:</strong> Locally cached data awaiting sync is encrypted</li>
-                <li><strong>Soft deletion:</strong> Deleted data is marked as deleted and hidden, with permanent deletion available on request</li>
-            </ul>
-            <div class="highlight-box">Your health data is inherently sensitive. We treat it according to health data protection standards and follow the principle of data minimization — we only collect what we need to provide the service.</div>
-        </div>
-    </div>
-
-    <!-- 6. Your Rights -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>6. حقوقك</h2>
-            <p>وفقًا للائحة العامة لحماية البيانات (GDPR) والقوانين المعمول بها، لديك الحقوق التالية:</p>
-            <ul>
-                <li><strong>حق الوصول:</strong> يمكنك طلب نسخة من جميع بياناتك الشخصية المخزنة لدينا</li>
-                <li><strong>حق التصحيح:</strong> يمكنك تحديث أو تصحيح بياناتك في أي وقت من خلال إعدادات الحساب</li>
-                <li><strong>حق الحذف:</strong> يمكنك طلب حذف حسابك وجميع بياناتك نهائيًا</li>
-                <li><strong>حق نقل البيانات:</strong> يمكنك طلب تصدير بياناتك بصيغة قابلة للقراءة</li>
-                <li><strong>حق الاعتراض:</strong> يمكنك الاعتراض على معالجة بياناتك لأغراض التسويق</li>
-                <li><strong>حق سحب الموافقة:</strong> يمكنك سحب موافقتك في أي وقت</li>
-            </ul>
-            <div class="highlight-box">لممارسة أي من هذه الحقوق، تواصل معنا عبر البريد الإلكتروني: <strong>lifecycleapp.support@gmail.com</strong>. سنستجيب خلال 30 يومًا كحد أقصى.</div>
-        </div>
-        <div class="lang-en">
-            <h2>6. Your Rights</h2>
-            <p>Under the General Data Protection Regulation (GDPR) and applicable laws, you have the following rights:</p>
-            <ul>
-                <li><strong>Right of access:</strong> You can request a copy of all personal data we store about you</li>
-                <li><strong>Right to rectification:</strong> You can update or correct your data at any time through account settings</li>
-                <li><strong>Right to erasure:</strong> You can request permanent deletion of your account and all associated data</li>
-                <li><strong>Right to data portability:</strong> You can request an export of your data in a machine-readable format</li>
-                <li><strong>Right to object:</strong> You can object to processing of your data for marketing purposes</li>
-                <li><strong>Right to withdraw consent:</strong> You can withdraw your consent at any time</li>
-            </ul>
-            <div class="highlight-box">To exercise any of these rights, contact us at: <strong>lifecycleapp.support@gmail.com</strong>. We will respond within 30 days.</div>
-        </div>
-    </div>
-
-    <!-- 7. Data Retention -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>7. الاحتفاظ بالبيانات</h2>
-            <p>نحتفظ ببياناتك طالما حسابك نشط. عند طلب حذف الحساب:</p>
-            <ul>
-                <li>تُحذف بيانات الحساب والملف الشخصي خلال 30 يومًا</li>
-                <li>تُحذف السجلات الصحية (المزاج، الأعراض، الوزن، إلخ) نهائيًا</li>
-                <li>قد تُحتفظ ببيانات مجهولة الهوية لأغراض إحصائية</li>
-                <li>البيانات المطلوبة قانونيًا تُحفظ وفق المدة القانونية</li>
-            </ul>
-        </div>
-        <div class="lang-en">
-            <h2>7. Data Retention</h2>
-            <p>We retain your data as long as your account is active. Upon account deletion request:</p>
-            <ul>
-                <li>Account and profile data are deleted within 30 days</li>
-                <li>Health records (mood, symptoms, weight, etc.) are permanently deleted</li>
-                <li>Anonymized data may be retained for statistical purposes</li>
-                <li>Legally required data is retained for the duration required by law</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 8. Children's Privacy -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>8. خصوصية الأطفال</h2>
-            <p>تطبيق دورة حياة مخصص للبالغين. <strong>الحد الأدنى للعمر المسموح باستخدام التطبيق هو 16 عامًا.</strong></p>
-            <p>لا نجمع بيانات من أشخاص دون 16 عامًا عن قصد. إذا علمنا أن مستخدمًا دون هذا السن قد أنشأ حسابًا، سنحذف بياناته فورًا.</p>
-            <p>إذا كنت ولي أمر وعلمت أن طفلك استخدم التطبيق، يرجى التواصل معنا على <strong>lifecycleapp.support@gmail.com</strong>.</p>
-        </div>
-        <div class="lang-en">
-            <h2>8. Children's Privacy</h2>
-            <p>Life Cycle is intended for adults. <strong>The minimum age to use the App is 16 years old.</strong></p>
-            <p>We do not knowingly collect data from individuals under 16. If we learn that a user under this age has created an account, we will delete their data immediately.</p>
-            <p>If you are a parent and learn that your child has used the App, please contact us at <strong>lifecycleapp.support@gmail.com</strong>.</p>
-        </div>
-    </div>
-
-    <!-- 9. Changes to This Policy -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>9. تغييرات على هذه السياسة</h2>
-            <p>قد نحدّث سياسة الخصوصية هذه من وقت لآخر. سنُعلمك بأي تغييرات جوهرية عبر:</p>
-            <ul>
-                <li>إشعار داخل التطبيق</li>
-                <li>تحديث تاريخ "آخر تحديث" في أعلى هذه الصفحة</li>
-            </ul>
-            <p>نوصي بمراجعة هذه السياسة بشكل دوري للاطلاع على أي تحديثات.</p>
-        </div>
-        <div class="lang-en">
-            <h2>9. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of material changes through:</p>
-            <ul>
-                <li>An in-app notification</li>
-                <li>Updating the "Last updated" date at the top of this page</li>
-            </ul>
-            <p>We recommend reviewing this policy periodically for any updates.</p>
-        </div>
-    </div>
-
-    <!-- 10. Contact -->
-    <div class="section">
-        <div class="lang-ar">
-            <h2>10. تواصل معنا</h2>
-        </div>
-        <div class="lang-en">
-            <h2>10. Contact Us</h2>
-        </div>
-        <div class="contact-box">
+        <!-- 1. Introduction -->
+        <section class="section" id="introduction">
+            <h2><span class="section-num">01</span>
+                <span class="lang-ar">مقدمة</span>
+                <span class="lang-en">Introduction</span>
+            </h2>
             <div class="lang-ar">
-                <p>إذا كانت لديك أسئلة حول سياسة الخصوصية أو كيفية تعاملنا مع بياناتك، لا تترددي في التواصل معنا:</p>
-                <p style="margin-top: 16px; font-size: 18px;">
-                    <strong>دورة حياة (Life Cycle)</strong><br>
-                    البريد الإلكتروني: <a href="mailto:lifecycleapp.support@gmail.com">lifecycleapp.support@gmail.com</a>
-                </p>
+                <p>مرحبًا بك في <strong>دورة حياة</strong> (Life Cycle). نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية. توضح هذه السياسة كيفية جمع بياناتك واستخدامها وتخزينها وحمايتها وحذفها عند استخدامك لتطبيقنا.</p>
+                <p>دورة حياة هي منصة عربية متخصصة في صحة المرأة والحمل، ونتعامل مع بياناتك الصحية بأعلى درجات الحرص والمسؤولية.</p>
+                <div class="callout">
+                    <span class="callout-icon">💜</span>
+                    <span>باستخدامك للتطبيق، فإنك توافق على الممارسات الموضحة في هذه السياسة. إذا لم تكن موافقًا، يرجى عدم استخدام التطبيق.</span>
+                </div>
             </div>
             <div class="lang-en">
-                <p>If you have questions about this Privacy Policy or how we handle your data, do not hesitate to reach out:</p>
-                <p style="margin-top: 16px; font-size: 18px;">
-                    <strong>Life Cycle (دورة حياة)</strong><br>
-                    Email: <a href="mailto:lifecycleapp.support@gmail.com">lifecycleapp.support@gmail.com</a>
-                </p>
+                <p>Welcome to <strong>Life Cycle</strong> (دورة حياة). We are committed to protecting your privacy and personal data. This policy explains how we collect, use, store, protect, and delete your data when you use our application.</p>
+                <p>Life Cycle is an Arabic-first women's health and pregnancy platform. We treat your health data with the highest level of care and responsibility.</p>
+                <div class="callout">
+                    <span class="callout-icon">💜</span>
+                    <span>By using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</span>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- 2. Data We Collect -->
+        <section class="section" id="data-we-collect">
+            <h2><span class="section-num">02</span>
+                <span class="lang-ar">البيانات التي نجمعها</span>
+                <span class="lang-en">Data we collect</span>
+            </h2>
+            <div class="lang-ar">
+                <h3>2.1 معلومات الحساب</h3>
+                <ul>
+                    <li>الاسم وعنوان البريد الإلكتروني</li>
+                    <li>كلمة المرور (مشفّرة باستخدام خوارزمية تجزئة قوية — لا تُخزَّن بصورتها الأصلية)</li>
+                    <li>معلومات تسجيل الدخول عبر Google أو Apple أو Facebook (إن اخترت استخدامها)</li>
+                </ul>
+
+                <h3>2.2 بيانات الرحلة الصحية</h3>
+                <ul>
+                    <li><strong>الحمل:</strong> تاريخ الولادة المتوقع، بيانات الجنين، تتبع الركلات، الانقباضات</li>
+                    <li><strong>ما بعد الولادة:</strong> معلومات الطفل، الرضاعة، النوم، جدول التطعيمات</li>
+                    <li><strong>تتبع الدورة:</strong> بيانات الدورة الشهرية والإباضة</li>
+                    <li><strong>عام:</strong> المزاج، الأعراض، الوزن، ضغط الدم، المواعيد الطبية</li>
+                </ul>
+
+                <h3>2.3 بيانات تبقى على جهازك فقط</h3>
+                <p>البيانات التالية لا تُرسَل إلى خوادمنا أبدًا:</p>
+                <ul>
+                    <li><strong>الملف الذكي (SmartProfile):</strong> يحلل بياناتك محليًا لتقديم توصيات</li>
+                    <li><strong>شرائح الإعلانات:</strong> تُحسَب على جهازك (مثل <span class="badge">الثلث الثالث</span>) — لا تُرسَل بيانات صحية خام</li>
+                    <li><strong>المحتوى المؤقت:</strong> محفوظ للاستخدام بدون إنترنت</li>
+                    <li><strong>قائمة الانتظار المشفّرة:</strong> بيانات تنتظر المزامنة (مشفّرة)</li>
+                </ul>
+            </div>
+            <div class="lang-en">
+                <h3>2.1 Account information</h3>
+                <ul>
+                    <li>Name and email address</li>
+                    <li>Password (hashed with a strong algorithm — never stored in plain text)</li>
+                    <li>Social login info from Google, Apple, or Facebook (if you choose to use them)</li>
+                </ul>
+
+                <h3>2.2 Health journey data</h3>
+                <ul>
+                    <li><strong>Pregnancy:</strong> Due date, baby info, kick counter, contractions</li>
+                    <li><strong>Postpartum:</strong> Baby info, feeding, sleep, vaccination schedule</li>
+                    <li><strong>Cycle tracking:</strong> Period and ovulation data</li>
+                    <li><strong>General:</strong> Mood, symptoms, weight, blood pressure, medical appointments</li>
+                </ul>
+
+                <h3>2.3 Data that stays on your device only</h3>
+                <p>The following data is never sent to our servers:</p>
+                <ul>
+                    <li><strong>SmartProfile:</strong> Analyzes your data locally to provide recommendations</li>
+                    <li><strong>Ad segments:</strong> Computed on-device (e.g. <span class="badge">3rd_trimester</span>) — raw health data is never sent</li>
+                    <li><strong>Cached content:</strong> Saved for offline use</li>
+                    <li><strong>Encrypted offline queue:</strong> Data awaiting sync (encrypted)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. How We Use Your Data -->
+        <section class="section" id="how-we-use">
+            <h2><span class="section-num">03</span>
+                <span class="lang-ar">كيف نستخدم بياناتك</span>
+                <span class="lang-en">How we use your data</span>
+            </h2>
+            <div class="lang-ar">
+                <ul>
+                    <li><strong>تقديم الخدمة:</strong> تخصيص محتوى صحي وتوصيات بناءً على رحلتك</li>
+                    <li><strong>تتبع صحتك:</strong> عرض سجلات المزاج والأعراض والوزن والضغط والمواعيد</li>
+                    <li><strong>التنبيهات:</strong> تذكيرات بالمواعيد والتطعيمات والنصائح المخصصة</li>
+                    <li><strong>تحسين التطبيق:</strong> تحليل الأعطال والأخطاء لتحسين الأداء</li>
+                    <li><strong>الإعلانات:</strong> عرض إعلانات ذات صلة بناءً على شرائح مجهولة الهوية</li>
+                </ul>
+                <div class="callout success">
+                    <span class="callout-icon">✅</span>
+                    <span><strong>لا نبيع</strong> بياناتك الشخصية أو الصحية لأي طرف ثالث مطلقًا.</span>
+                </div>
+            </div>
+            <div class="lang-en">
+                <ul>
+                    <li><strong>Service delivery:</strong> Personalizing health content based on your journey</li>
+                    <li><strong>Health tracking:</strong> Displaying mood, symptoms, weight, blood pressure, and appointments</li>
+                    <li><strong>Notifications:</strong> Reminders for appointments, vaccinations, and personalized tips</li>
+                    <li><strong>App improvement:</strong> Analyzing crashes and errors to improve performance</li>
+                    <li><strong>Advertising:</strong> Showing relevant ads based on anonymous on-device segments</li>
+                </ul>
+                <div class="callout success">
+                    <span class="callout-icon">✅</span>
+                    <span>We <strong>never sell</strong> your personal or health data to any third party.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Third-Party Services -->
+        <section class="section" id="third-parties">
+            <h2><span class="section-num">04</span>
+                <span class="lang-ar">الخدمات الخارجية</span>
+                <span class="lang-en">Third-party services</span>
+            </h2>
+            <div class="lang-ar">
+                <p>يتكامل التطبيق مع الخدمات التالية، ولكل منها سياسة خصوصية خاصة:</p>
+                <ul>
+                    <li><strong>Google / Apple / Facebook Sign-In:</strong> يتلقى التطبيق اسمك وبريدك الإلكتروني فقط</li>
+                    <li><strong>Sentry:</strong> تقارير الأعطال التقنية (نوع الجهاز، نظام التشغيل، مسار الخطأ) — بدون بيانات صحية</li>
+                    <li><strong>Expo / EAS:</strong> الإشعارات وتحديثات التطبيق — يتلقى رمز الإشعار الخاص بجهازك</li>
+                    <li><strong>شبكات الإعلانات:</strong> تتلقى فقط شرائح مجهولة الهوية (مثل <span class="badge">birth_prep</span> <span class="badge">nursing_support</span>) — لا تُشارَك بيانات صحية خام</li>
+                </ul>
+            </div>
+            <div class="lang-en">
+                <p>The App integrates with the following services, each with its own privacy policy:</p>
+                <ul>
+                    <li><strong>Google / Apple / Facebook Sign-In:</strong> The App receives only your name and email</li>
+                    <li><strong>Sentry:</strong> Crash reports (device type, OS, error stack trace) — no health data</li>
+                    <li><strong>Expo / EAS:</strong> Push notifications and OTA updates — receives your push token</li>
+                    <li><strong>Ad networks:</strong> Receive only anonymous segments (e.g. <span class="badge">birth_prep</span> <span class="badge">nursing_support</span>) — no raw health data is shared</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. Security -->
+        <section class="section" id="security">
+            <h2><span class="section-num">05</span>
+                <span class="lang-ar">أمان البيانات</span>
+                <span class="lang-en">Data security</span>
+            </h2>
+            <div class="lang-ar">
+                <ul>
+                    <li><strong>التشفير أثناء النقل:</strong> جميع البيانات تُنقل عبر HTTPS</li>
+                    <li><strong>تشفير كلمات المرور:</strong> تجزئة آمنة قبل التخزين</li>
+                    <li><strong>تخزين آمن على الجهاز:</strong> Expo SecureStore لحفظ الرموز المميزة</li>
+                    <li><strong>قائمة انتظار مشفّرة:</strong> البيانات المحلية للمزامنة مشفّرة</li>
+                    <li><strong>الحذف الناعم ثم النهائي:</strong> البيانات المحذوفة تُخفى فورًا، وتُحذف نهائيًا خلال 30 يومًا</li>
+                </ul>
+                <div class="callout">
+                    <span class="callout-icon">🔒</span>
+                    <span>نطبّق مبدأ الحد الأدنى من البيانات — لا نجمع إلا ما نحتاجه فعلًا لتقديم الخدمة.</span>
+                </div>
+            </div>
+            <div class="lang-en">
+                <ul>
+                    <li><strong>Encryption in transit:</strong> All data is sent over HTTPS</li>
+                    <li><strong>Password hashing:</strong> Secure hashing before storage</li>
+                    <li><strong>Secure device storage:</strong> Expo SecureStore for authentication tokens</li>
+                    <li><strong>Encrypted offline queue:</strong> Locally cached sync data is encrypted</li>
+                    <li><strong>Soft then permanent deletion:</strong> Deleted data is hidden immediately and permanently erased within 30 days</li>
+                </ul>
+                <div class="callout">
+                    <span class="callout-icon">🔒</span>
+                    <span>We follow data minimization — we collect only what we actually need to provide the service.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Data Storage / Retention -->
+        <section class="section highlight" id="data-storage">
+            <h2><span class="section-num">06</span>
+                <span class="lang-ar">تخزين البيانات ومدة الاحتفاظ</span>
+                <span class="lang-en">Data storage &amp; retention</span>
+            </h2>
+            <div class="lang-ar">
+                <p><strong>أين تُخزَّن بياناتك:</strong> على خوادم سحابية آمنة تستضيفها Railway (مركز بيانات داخل الاتحاد الأوروبي / الولايات المتحدة)، مع نسخ احتياطية مشفّرة.</p>
+                <p><strong>كم من الوقت نحتفظ بها:</strong> طالما حسابك نشط. إذا حذفت حسابك، نتبع الجدول التالي:</p>
+                <table class="retention-table">
+                    <thead>
+                        <tr>
+                            <th>نوع البيانات</th>
+                            <th>مدة الاحتفاظ</th>
+                            <th>عند الحذف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>بيانات الحساب (اسم، بريد)</td>
+                            <td>طوال نشاط الحساب</td>
+                            <td><span class="badge green">حذف خلال 30 يومًا</span></td>
+                        </tr>
+                        <tr>
+                            <td>البيانات الصحية (المزاج، الأعراض، الوزن، الضغط، الركلات، الدورة)</td>
+                            <td>طوال نشاط الحساب</td>
+                            <td><span class="badge green">حذف نهائي خلال 30 يومًا</span></td>
+                        </tr>
+                        <tr>
+                            <td>سجلات الطفل والتطعيمات</td>
+                            <td>طوال نشاط الحساب</td>
+                            <td><span class="badge green">حذف نهائي خلال 30 يومًا</span></td>
+                        </tr>
+                        <tr>
+                            <td>سجلات تسجيل الدخول والأمان</td>
+                            <td>90 يومًا</td>
+                            <td><span class="badge green">حذف تلقائي</span></td>
+                        </tr>
+                        <tr>
+                            <td>تقارير الأعطال (Sentry)</td>
+                            <td>90 يومًا</td>
+                            <td><span class="badge green">حذف تلقائي</span></td>
+                        </tr>
+                        <tr>
+                            <td>بيانات مجهولة الهوية للإحصاءات</td>
+                            <td>قد تُحفظ بعد الحذف</td>
+                            <td><span class="badge amber">مُجهَّلة بالكامل</span></td>
+                        </tr>
+                        <tr>
+                            <td>سجلات الفواتير والقانونية</td>
+                            <td>وفق المدة القانونية المطلوبة</td>
+                            <td><span class="badge amber">قانوني</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="callout success">
+                    <span class="callout-icon">⏱️</span>
+                    <span>عند طلب الحذف: تختفي بياناتك من التطبيق فورًا، ويتم حذفها نهائيًا من خوادمنا ونسخنا الاحتياطية خلال 30 يومًا كحد أقصى.</span>
+                </div>
+            </div>
+            <div class="lang-en">
+                <p><strong>Where your data is stored:</strong> On secure cloud servers hosted by Railway (EU / US data centers), with encrypted backups.</p>
+                <p><strong>How long we keep it:</strong> As long as your account is active. If you delete your account, we follow this schedule:</p>
+                <table class="retention-table">
+                    <thead>
+                        <tr>
+                            <th>Data type</th>
+                            <th>Retention period</th>
+                            <th>On deletion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Account data (name, email)</td>
+                            <td>While account is active</td>
+                            <td><span class="badge green">Deleted within 30 days</span></td>
+                        </tr>
+                        <tr>
+                            <td>Health data (mood, symptoms, weight, BP, kicks, cycle)</td>
+                            <td>While account is active</td>
+                            <td><span class="badge green">Permanently deleted within 30 days</span></td>
+                        </tr>
+                        <tr>
+                            <td>Baby and vaccination records</td>
+                            <td>While account is active</td>
+                            <td><span class="badge green">Permanently deleted within 30 days</span></td>
+                        </tr>
+                        <tr>
+                            <td>Login &amp; security logs</td>
+                            <td>90 days</td>
+                            <td><span class="badge green">Auto-deleted</span></td>
+                        </tr>
+                        <tr>
+                            <td>Crash reports (Sentry)</td>
+                            <td>90 days</td>
+                            <td><span class="badge green">Auto-deleted</span></td>
+                        </tr>
+                        <tr>
+                            <td>Anonymized statistical data</td>
+                            <td>May be retained after deletion</td>
+                            <td><span class="badge amber">Fully anonymized</span></td>
+                        </tr>
+                        <tr>
+                            <td>Billing &amp; legal records</td>
+                            <td>As legally required</td>
+                            <td><span class="badge amber">Legal hold</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="callout success">
+                    <span class="callout-icon">⏱️</span>
+                    <span>When you request deletion: your data disappears from the app immediately, and is permanently erased from our servers and backups within 30 days.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Account & Data Deletion (Play Store anchor) -->
+        <section class="section danger" id="delete-account">
+            <h2><span class="section-num">07</span>
+                <span class="lang-ar">حذف حسابك وبياناتك</span>
+                <span class="lang-en">Delete your account &amp; data</span>
+            </h2>
+            <div class="lang-ar">
+                <p>يمكنك حذف حسابك وجميع بياناتك بأي من الطريقتين التاليتين:</p>
+
+                <h3>🗑️ الطريقة 1: من داخل التطبيق (موصى بها)</h3>
+                <ol class="steps">
+                    <li><div class="step-content"><strong>افتح تطبيق دورة حياة</strong><small>سجّل الدخول إن لزم الأمر</small></div></li>
+                    <li><div class="step-content"><strong>اذهب إلى الملف الشخصي</strong><small>أيقونة "أنا" / "الملف الشخصي" في شريط التبويب السفلي</small></div></li>
+                    <li><div class="step-content"><strong>اضغط "إعدادات الخصوصية"</strong><small>Privacy Settings</small></div></li>
+                    <li><div class="step-content"><strong>اختر "حذف الحساب"</strong><small>Delete Account</small></div></li>
+                    <li><div class="step-content"><strong>أكّد بكلمة المرور</strong><small>إجراء حماية إضافية للتأكد من هويتك</small></div></li>
+                    <li><div class="step-content"><strong>تأكيد نهائي</strong><small>سيُحذف حسابك وكل بياناتك خلال 30 يومًا</small></div></li>
+                </ol>
+
+                <h3>📧 الطريقة 2: عبر البريد الإلكتروني</h3>
+                <p>أرسل بريدًا إلكترونيًا إلى <a href="mailto:lifecycleapp.support@gmail.com?subject=Account%20Deletion%20Request">lifecycleapp.support@gmail.com</a> من البريد المسجّل في حسابك، مع موضوع: <strong>"Account Deletion Request"</strong>. سنرد خلال 30 يومًا.</p>
+
+                <h3>ماذا يُحذف وماذا يُحفظ؟</h3>
+                <ul>
+                    <li>✅ <strong>يُحذف نهائيًا:</strong> كل بيانات الحساب والملف الشخصي، السجلات الصحية، بيانات الطفل، التطعيمات، الملاحظات، التذكيرات</li>
+                    <li>✅ <strong>تُلغى:</strong> الإشعارات والتذكيرات</li>
+                    <li>📊 <strong>قد يُحفَظ بصورة مُجهَّلة:</strong> بيانات إحصائية مجهولة الهوية لا يمكن ربطها بك (مثل "عدد المستخدمين في الأسبوع 20 من الحمل")</li>
+                    <li>📜 <strong>يُحفَظ قانونيًا:</strong> سجلات الفواتير أو المتطلبات القانونية وفق المدة المنصوص عليها</li>
+                </ul>
+
+                <div class="callout warn">
+                    <span class="callout-icon">⚠️</span>
+                    <span>الحذف <strong>نهائي ولا يمكن التراجع عنه</strong>. تأكد من حفظ أي بيانات تريد الاحتفاظ بها قبل المتابعة. لتصدير بياناتك أولًا، انظر <a href="#your-rights">حقوقك</a>.</span>
+                </div>
+            </div>
+            <div class="lang-en">
+                <p>You can delete your account and all your data in one of two ways:</p>
+
+                <h3>🗑️ Method 1: From inside the app (recommended)</h3>
+                <ol class="steps">
+                    <li><div class="step-content"><strong>Open the Life Cycle app</strong><small>Sign in if needed</small></div></li>
+                    <li><div class="step-content"><strong>Go to your Profile</strong><small>"Me" / "Profile" icon in the bottom tab bar</small></div></li>
+                    <li><div class="step-content"><strong>Tap "Privacy Settings"</strong><small>إعدادات الخصوصية</small></div></li>
+                    <li><div class="step-content"><strong>Choose "Delete Account"</strong><small>حذف الحساب</small></div></li>
+                    <li><div class="step-content"><strong>Confirm with your password</strong><small>An extra safeguard to verify your identity</small></div></li>
+                    <li><div class="step-content"><strong>Final confirmation</strong><small>Your account and all data will be deleted within 30 days</small></div></li>
+                </ol>
+
+                <h3>📧 Method 2: By email</h3>
+                <p>Send an email to <a href="mailto:lifecycleapp.support@gmail.com?subject=Account%20Deletion%20Request">lifecycleapp.support@gmail.com</a> from the email address registered to your account, with subject: <strong>"Account Deletion Request"</strong>. We will respond within 30 days.</p>
+
+                <h3>What gets deleted, what is kept?</h3>
+                <ul>
+                    <li>✅ <strong>Permanently deleted:</strong> All account and profile data, health records, baby data, vaccinations, notes, reminders</li>
+                    <li>✅ <strong>Cancelled:</strong> Notifications and reminders</li>
+                    <li>📊 <strong>May be kept anonymized:</strong> Statistical data that cannot be linked back to you (e.g. "users at pregnancy week 20")</li>
+                    <li>📜 <strong>Kept by law:</strong> Billing records or legally required data for the duration mandated</li>
+                </ul>
+
+                <div class="callout warn">
+                    <span class="callout-icon">⚠️</span>
+                    <span>Deletion is <strong>permanent and cannot be undone</strong>. Make sure to save anything you want to keep first. To export your data first, see <a href="#your-rights">Your rights</a>.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Your Rights -->
+        <section class="section" id="your-rights">
+            <h2><span class="section-num">08</span>
+                <span class="lang-ar">حقوقك</span>
+                <span class="lang-en">Your rights</span>
+            </h2>
+            <div class="lang-ar">
+                <p>وفقًا للائحة العامة لحماية البيانات (GDPR) والقوانين المعمول بها، لديك الحقوق التالية:</p>
+                <ul>
+                    <li><strong>حق الوصول:</strong> طلب نسخة من بياناتك</li>
+                    <li><strong>حق التصحيح:</strong> تحديث بياناتك من إعدادات الحساب</li>
+                    <li><strong>حق الحذف:</strong> انظر <a href="#delete-account">حذف حسابك</a></li>
+                    <li><strong>حق نقل البيانات:</strong> طلب تصدير بصيغة قابلة للقراءة</li>
+                    <li><strong>حق الاعتراض:</strong> الاعتراض على معالجة البيانات لأغراض التسويق</li>
+                    <li><strong>حق سحب الموافقة:</strong> سحب موافقتك في أي وقت</li>
+                </ul>
+                <p>لممارسة أي من هذه الحقوق، تواصل معنا على <a href="mailto:lifecycleapp.support@gmail.com">lifecycleapp.support@gmail.com</a>. سنستجيب خلال 30 يومًا.</p>
+            </div>
+            <div class="lang-en">
+                <p>Under the GDPR and applicable laws, you have the following rights:</p>
+                <ul>
+                    <li><strong>Right of access:</strong> Request a copy of your data</li>
+                    <li><strong>Right to rectification:</strong> Update your data from account settings</li>
+                    <li><strong>Right to erasure:</strong> See <a href="#delete-account">Delete your account</a></li>
+                    <li><strong>Right to data portability:</strong> Request a machine-readable export</li>
+                    <li><strong>Right to object:</strong> Object to processing for marketing purposes</li>
+                    <li><strong>Right to withdraw consent:</strong> Withdraw your consent at any time</li>
+                </ul>
+                <p>To exercise any of these rights, contact us at <a href="mailto:lifecycleapp.support@gmail.com">lifecycleapp.support@gmail.com</a>. We respond within 30 days.</p>
+            </div>
+        </section>
+
+        <!-- 9. Children -->
+        <section class="section" id="children">
+            <h2><span class="section-num">09</span>
+                <span class="lang-ar">خصوصية الأطفال</span>
+                <span class="lang-en">Children's privacy</span>
+            </h2>
+            <div class="lang-ar">
+                <p>التطبيق مخصص للبالغين. <strong>الحد الأدنى للعمر هو 16 عامًا.</strong> لا نجمع بيانات من أشخاص دون هذا السن عن قصد. إذا علمنا أن مستخدمًا دون 16 عامًا أنشأ حسابًا، سنحذف بياناته فورًا.</p>
+                <p>إذا كنت ولي أمر ولاحظت أن طفلك استخدم التطبيق، تواصل معنا على <a href="mailto:lifecycleapp.support@gmail.com">lifecycleapp.support@gmail.com</a>.</p>
+            </div>
+            <div class="lang-en">
+                <p>Life Cycle is intended for adults. <strong>The minimum age to use the App is 16 years old.</strong> We do not knowingly collect data from people under this age. If we learn that a user under 16 has created an account, we will delete their data immediately.</p>
+                <p>If you are a parent and notice that your child has used the App, please contact us at <a href="mailto:lifecycleapp.support@gmail.com">lifecycleapp.support@gmail.com</a>.</p>
+            </div>
+        </section>
+
+        <!-- 10. Changes -->
+        <section class="section" id="changes">
+            <h2><span class="section-num">10</span>
+                <span class="lang-ar">تغييرات على هذه السياسة</span>
+                <span class="lang-en">Changes to this policy</span>
+            </h2>
+            <div class="lang-ar">
+                <p>قد نحدّث هذه السياسة من وقت لآخر. سنُعلمك بأي تغييرات جوهرية عبر إشعار داخل التطبيق وتحديث تاريخ "آخر تحديث" أعلى الصفحة.</p>
+            </div>
+            <div class="lang-en">
+                <p>We may update this policy from time to time. We will notify you of material changes via an in-app notification and by updating the "Last updated" date at the top of this page.</p>
+            </div>
+        </section>
+
+        <!-- 11. Contact -->
+        <section class="section" id="contact">
+            <h2><span class="section-num">11</span>
+                <span class="lang-ar">تواصل معنا</span>
+                <span class="lang-en">Contact us</span>
+            </h2>
+            <div class="contact-card">
+                <h3>
+                    <span class="lang-ar">💜 دورة حياة (Life Cycle)</span>
+                    <span class="lang-en">💜 Life Cycle (دورة حياة)</span>
+                </h3>
+                <p>
+                    <span class="lang-ar">لأي سؤال عن سياسة الخصوصية أو طلب يتعلق ببياناتك:</span>
+                    <span class="lang-en">For any privacy questions or data-related requests:</span>
+                </p>
+                <a class="email-cta" href="mailto:lifecycleapp.support@gmail.com">lifecycleapp.support@gmail.com</a>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<footer class="footer">
+    <div>
+        <span class="lang-ar">&copy; 2026 دورة حياة (Life Cycle). جميع الحقوق محفوظة.</span>
+        <span class="lang-en">&copy; 2026 Life Cycle (دورة حياة). All rights reserved.</span>
     </div>
-
-</div>
-
-<div class="footer">
-    <span class="lang-ar">&copy; 2026 دورة حياة (Life Cycle). جميع الحقوق محفوظة.</span>
-    <span class="lang-en">&copy; 2026 Life Cycle (دورة حياة). All rights reserved.</span>
-</div>
+    <div class="footer-links">
+        <a href="#delete-account"><span class="lang-ar">حذف الحساب</span><span class="lang-en">Delete Account</span></a>
+        <a href="mailto:lifecycleapp.support@gmail.com"><span class="lang-ar">الدعم</span><span class="lang-en">Support</span></a>
+    </div>
+</footer>
 
 <script>
-    let isArabic = true;
-
-    function toggleLanguage() {
-        isArabic = !isArabic;
+    function setLanguage(lang) {
         const html = document.documentElement;
-        const btn = document.getElementById('langBtn');
+        const body = document.body;
+        const arBtn = document.getElementById('langAr');
+        const enBtn = document.getElementById('langEn');
 
-        if (isArabic) {
-            html.setAttribute('lang', 'ar');
-            html.setAttribute('dir', 'rtl');
-            document.body.classList.remove('en');
-            btn.textContent = 'English';
-        } else {
+        if (lang === 'en') {
             html.setAttribute('lang', 'en');
             html.setAttribute('dir', 'ltr');
-            document.body.classList.add('en');
-            btn.textContent = 'العربية';
+            body.classList.add('en');
+            arBtn.classList.remove('active');
+            enBtn.classList.add('active');
+            try { localStorage.setItem('hamly-privacy-lang', 'en'); } catch (e) {}
+        } else {
+            html.setAttribute('lang', 'ar');
+            html.setAttribute('dir', 'rtl');
+            body.classList.remove('en');
+            arBtn.classList.add('active');
+            enBtn.classList.remove('active');
+            try { localStorage.setItem('hamly-privacy-lang', 'ar'); } catch (e) {}
         }
     }
+
+    // Honor saved preference or browser language
+    (function () {
+        let saved = null;
+        try { saved = localStorage.getItem('hamly-privacy-lang'); } catch (e) {}
+        if (saved === 'en' || saved === 'ar') {
+            setLanguage(saved);
+            return;
+        }
+        const nav = (navigator.language || '').toLowerCase();
+        if (nav.startsWith('ar')) setLanguage('ar');
+        else setLanguage('en');
+    })();
 </script>
 
 </body>
